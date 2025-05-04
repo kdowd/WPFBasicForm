@@ -1,0 +1,66 @@
+﻿<Window x:Class="BasicForm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasicForm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Style="{StaticResource BaseStyles}">
+
+    <Border BorderBrush="Black" BorderThickness="2">
+
+        <Grid ShowGridLines="True">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*">
+
+                </ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+
+
+            <Grid Grid.Column="1" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+
+
+            <StackPanel>
+                <StackPanel Margin="0 10" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Height="Auto" Orientation="Horizontal" Background="Transparent"  >
+                    <Button Margin="0 0 10 0" Height="Auto" Style="{StaticResource RedFoo}">Buy</Button>
+                    <Button Style="{StaticResource RedFoo}">Rent</Button>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Margin="0 0 10 0" HorizontalAlignment="Center">
+                    <CheckBox  x:Name="LeatherSeats" Content="Leather Seats" Checked="Checkbox_Checked" />
+                    <CheckBox Checked="Checkbox_Checked" x:Name="AutomaticDrive" Content="Automatic Drive" />
+                    <CheckBox Checked="Checkbox_Checked" x:Name="BabySeats" Content="Baby Seats" />
+                    <CheckBox Checked="Checkbox_Checked" x:Name="RoofRack" Content="Roof Rack" />
+                    <CheckBox Checked="Checkbox_Checked" x:Name="SportsEdition" Content="Sports Edition" />
+                </StackPanel>
+                <StackPanel Margin="0 20 0 0" HorizontalAlignment="Center">
+                    <TextBlock  Margin="0 0 0 2" Text="Choose Make:" />
+                    <ComboBox Padding="6" MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Center" SelectionChanged="onMakeUpdated">
+                        <ComboBoxItem>Mercedes</ComboBoxItem>
+                        <ComboBoxItem>BMW</ComboBoxItem>
+                        <ComboBoxItem>Kia</ComboBoxItem>
+                        <ComboBoxItem>BYD</ComboBoxItem>
+                        <ComboBoxItem>Aston Martin</ComboBoxItem>
+                        <ComboBoxItem>Jaguar</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+
+
+
+
+
+
+        </Grid>
+    </Border>
+</Window>
