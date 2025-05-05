@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BasicForm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        Title="Rock::Paper::Scissors" Height="450" Width="800"
         Style="{StaticResource BaseStyles}">
 
     <Border BorderBrush="Black" BorderThickness="2">
@@ -27,34 +29,31 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
+                <Image Source="/images/hero.png" Margin="10" Width="276" Height="101" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="user_image"></Image>
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  x:Name="computer_image"></Image>
+                </Grid>
             </Grid>
 
 
-            <StackPanel>
-                <StackPanel Margin="0 10" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Height="Auto" Orientation="Horizontal" Background="Transparent"  >
-                    <Button Margin="0 0 10 0" Height="Auto" Style="{StaticResource RedFoo}">Buy</Button>
-                    <Button Style="{StaticResource RedFoo}">Rent</Button>
-                </StackPanel>
+            <StackPanel Grid.Column="0" Margin="0 20 0 0" HorizontalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" Margin="0 0 0 2" Text="Player One, Make Your Choice:" />
+                <ComboBox Padding="6" MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Center" SelectionChanged="onMakeUpdated">
+                    <ComboBoxItem Tag="rock">Rock</ComboBoxItem>
+                    <ComboBoxItem Tag="paper">Paper</ComboBoxItem>
+                    <ComboBoxItem Tag="scissors">Scissors</ComboBoxItem>
 
-                <StackPanel Grid.Column="0" Margin="0 0 10 0" HorizontalAlignment="Center">
-                    <CheckBox  x:Name="LeatherSeats" Content="Leather Seats" Checked="Checkbox_Checked" />
-                    <CheckBox Checked="Checkbox_Checked" x:Name="AutomaticDrive" Content="Automatic Drive" />
-                    <CheckBox Checked="Checkbox_Checked" x:Name="BabySeats" Content="Baby Seats" />
-                    <CheckBox Checked="Checkbox_Checked" x:Name="RoofRack" Content="Roof Rack" />
-                    <CheckBox Checked="Checkbox_Checked" x:Name="SportsEdition" Content="Sports Edition" />
-                </StackPanel>
-                <StackPanel Margin="0 20 0 0" HorizontalAlignment="Center">
-                    <TextBlock  Margin="0 0 0 2" Text="Choose Make:" />
-                    <ComboBox Padding="6" MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Center" SelectionChanged="onMakeUpdated">
-                        <ComboBoxItem>Mercedes</ComboBoxItem>
-                        <ComboBoxItem>BMW</ComboBoxItem>
-                        <ComboBoxItem>Kia</ComboBoxItem>
-                        <ComboBoxItem>BYD</ComboBoxItem>
-                        <ComboBoxItem>Aston Martin</ComboBoxItem>
-                        <ComboBoxItem>Jaguar</ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
+                </ComboBox>
             </StackPanel>
+
+
 
 
 

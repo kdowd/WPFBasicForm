@@ -24,7 +24,7 @@
         <Style TargetType="{x:Type Window}" x:Key="BaseStyles">
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontFamily" Value="Cascadia Code" />
-            <Setter Property="Background" Value="OliveDrab" />
+            <Setter Property="Background" Value="White" />
 
         </Style>
 

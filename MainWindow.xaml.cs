@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using BasicForm.Game;
+using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace BasicForm
 {
     /// <summary>
@@ -17,9 +19,16 @@ namespace BasicForm
     /// </summary>
     public partial class MainWindow : Window
     {
+        private RPS t = new RPS();
+
         public MainWindow()
         {
             InitializeComponent();
+            Image imgElement = ((Image)computer_image);
+            BitmapImage bm = new BitmapImage(new Uri(@"/images/rock.jpg", UriKind.Relative));
+            imgElement.Source = bm;
+            imgElement.Width = bm.Width;
+            imgElement.Height = bm.Height;
         }
 
         private void Checkbox_Checked(object sender, RoutedEventArgs e)
@@ -29,16 +38,17 @@ namespace BasicForm
 
         private void onMakeUpdated(object sender, SelectionChangedEventArgs e)
         {
-            if (sender is ComboBox temp)
-            {
-                var x = temp.SelectedIndex;
-                var y = temp.SelectedValue;
 
-                if (temp.SelectedItem is ComboBoxItem z)
-                {
-                    MessageBox.Show(z.Content.ToString());
-                }
+            ComboBox temp = (ComboBox)sender;
+            string? userChoice = ((ComboBoxItem)temp.SelectedItem).Content?.ToString();
+
+            if (userChoice != null)
+            {
+                MessageBox.Show(userChoice);
+
             }
+
+
         }
     }
 }
