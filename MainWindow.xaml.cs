@@ -14,41 +14,28 @@ using System.Windows.Shapes;
 
 namespace BasicForm
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        private RPS t = new RPS();
+        // globalized via Application.Current.MainWindow
+        RPS t;
+
+        private string _specialStr = string.Empty;
+        public string SpecialStr   // property
+        {
+            get { return _specialStr; }   // get method
+            set { _specialStr = value; }  // set method
+        }
+
+
 
         public MainWindow()
         {
             InitializeComponent();
-            Image imgElement = ((Image)computer_image);
-            BitmapImage bm = new BitmapImage(new Uri(@"/images/rock.jpg", UriKind.Relative));
-            imgElement.Source = bm;
-            imgElement.Width = bm.Width;
-            imgElement.Height = bm.Height;
+            t = new RPS(UserCB);
         }
 
-        private void Checkbox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void onMakeUpdated(object sender, SelectionChangedEventArgs e)
-        {
-
-            ComboBox temp = (ComboBox)sender;
-            string? userChoice = ((ComboBoxItem)temp.SelectedItem).Content?.ToString();
-
-            if (userChoice != null)
-            {
-                MessageBox.Show(userChoice);
-
-            }
 
 
-        }
     }
 }

@@ -29,7 +29,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Image Source="/images/hero.png" Margin="10" Width="276" Height="101" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                <Image x:Name="HERO" Source="/images/hero.png" Margin="10" Width="276" Height="101" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
 
                 <Grid Grid.Row="1">
@@ -45,7 +45,7 @@
 
             <StackPanel Grid.Column="0" Margin="0 20 0 0" HorizontalAlignment="Center">
                 <TextBlock TextWrapping="Wrap" Margin="0 0 0 2" Text="Player One, Make Your Choice:" />
-                <ComboBox Padding="6" MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Center" SelectionChanged="onMakeUpdated">
+                <ComboBox  x:Name="UserCB" Padding="6" MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <ComboBoxItem Tag="rock">Rock</ComboBoxItem>
                     <ComboBoxItem Tag="paper">Paper</ComboBoxItem>
                     <ComboBoxItem Tag="scissors">Scissors</ComboBoxItem>
